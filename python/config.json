@@ -1,0 +1,5 @@
+{
+    "img_size": 1024,
+    "device": "cpu",
+    "qt": false
+}
