@@ -13,4 +13,8 @@
     <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.8.0.20230708" />
   </ItemGroup>
 
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="xcopy /y &quot;F:\Hacarus\dll_sam\x64\Debug\*.dll&quot; &quot;$(TargetDir)&quot;" />
+  </Target>
+
 </Project>

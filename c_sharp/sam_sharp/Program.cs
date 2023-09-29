@@ -114,13 +114,13 @@ Main();
 // do not change function name
 class SAM
 {
-
-    [DllImport("F:\\Hacarus\\dll_sam\\x64\\Debug\\dll_sam.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+    // F:\\Hacarus\\dll_sam\\x64\\Debug\\dll_sam.dll
+    [DllImport("sam_cxx.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     public static extern int encode_img_sharp(
         string img_path, string img_encoder_path,
         float[] outputArray, out int outputSize);
 
-    [DllImport("F:\\Hacarus\\dll_sam\\x64\\Debug\\dll_sam.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+    [DllImport("sam_cxx.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     public static extern int inference_sharp(
         float[] coords1, int coords1_size,
         float[] coords2, int coords2_size,

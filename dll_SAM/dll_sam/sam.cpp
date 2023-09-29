@@ -1,4 +1,4 @@
-#include "pch.h"
+#include <windows.h>
 #include "sam.h"
 
 // 1. Standard Library

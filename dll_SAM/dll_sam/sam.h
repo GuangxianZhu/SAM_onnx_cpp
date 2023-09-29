@@ -2,6 +2,12 @@
 #ifndef _SAM_H_
 #define _SAM_H_
 
+#ifdef BUILDING_SAM_DLL
+#define SAM_API __declspec(dllexport)
+#else
+#define SAM_API __declspec(dllimport)
+#endif
+
 #include <opencv2/opencv.hpp>
 #include <vector>
 
@@ -14,13 +20,13 @@ std::vector<float> encode_img(const char* img_path, const wchar_t* img_encoder_p
 std::vector<float> inference(std::vector<float> coords1, std::vector<float> coords2, std::vector<float> output,
     std::vector<float> image_embedding, const wchar_t* onnx_model_path, cv::Mat original_image);
 
-extern "C" __declspec(dllexport) int encode_img_sharp(
+extern "C" SAM_API int encode_img_sharp(
     const char* img_path, 
     const char* img_encoder_path, 
     float* outputArray, 
     int* outputSize);
 
-extern "C" __declspec(dllexport) int inference_sharp(
+extern "C" SAM_API int inference_sharp(
     const float* coords1, int coords1_size,
     const float* coords2, int coords2_size,
     const float* image_embedding, int image_embedding_size,
